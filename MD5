@@ -1,0 +1,13 @@
+e7cae152673be06de6bf07041afc3417 *DESCRIPTION
+be182017469f5980df618533643eda59 *NAMESPACE
+a228c2a2820f33d4935c05653b5ae1f9 *R/crunch-page.R
+bd5b5a3d9a95f40dc51edd0c6fa55833 *R/render.R
+61abed7a8a7415305baf46dda1b35592 *R/shiny-dataset.R
+aa5c40d7ef12b924ca932ed162d2c725 *inst/extra.css
+8c892d1f2ca85a92c482c133ec831b98 *inst/extra.js
+7642c0f1bb4707d36587f097ae4fbce2 *man/crunchPage.Rd
+1dfa14b247cb347cf80e0e555527fc31 *man/shinyDataset.Rd
+edb3da8bd17712b075424872a13325b9 *tests/testthat.R
+dd1e404d3f7301f5f3ab234aae427697 *tests/testthat/helper.R
+20b7f8cb2b861513dcefaf251f441449 *tests/testthat/test-page.R
+b64c2d605ac2e0482fa5d693db7a6d35 *tests/testthat/test-shiny-dataset.R

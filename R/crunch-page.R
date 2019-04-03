@@ -1,14 +1,11 @@
 #' Build a Crunchy UI
 #'
-#' Shiny provides page functions for defining UI layout. These
-#' functions wraps those and includes additional assets needed to match
-#' Crunch UI style and keep your users authenticated. When building shiny apps
-#' with Crunch datasets, use these instead of [shiny::fluidPage()] or
-#' [shiny::fillPage()].
-#' @param ... arguments passed to `fluidPage` or `fillPage`
-#' @return The result of `fluidPage` or `fillPage`
+#' These are no longer necessary. Just use the `shiny` ones and it just works.
+#' These functions are left here for backwards compatibility.
+#' @param ... arguments passed to `fluidPage`, `fillPage` or `navbarPage`
+#' @return The result of `fluidPage`, `fillPage` or `navbarPage`
 #' @export
-#' @importFrom shiny fluidPage fillPage includeCSS includeScript tags div
+#' @importFrom shiny fluidPage fillPage navbarPage includeCSS includeScript tags div
 #' @examples
 #' \dontrun{
 #' crunchPage(
@@ -32,13 +29,7 @@
 #'     )
 #' )
 #' }
-crunchPage <- function (...) {
-    fluidPage(
-        loadCrunchAssets(),
-        crunchAuthPlaceholder(),
-        ...
-    )
-}
+crunchPage <- function (...) fluidPage(...)
 
 #' @rdname crunchPage
 #' @export
@@ -46,27 +37,55 @@ crunchFluidPage <- crunchPage
 
 #' @rdname crunchPage
 #' @export
-crunchFillPage <- function (...) {
-    fillPage(
-        loadCrunchAssets(),
-        crunchAuthPlaceholder(),
-        ...
+crunchFillPage <- function (...) fillPage(...)
+
+#' @rdname crunchPage
+#' @export
+crunchNavbarPage <- function (...) navbarPage(...)
+
+#' @importFrom shiny div includeCSS includeScript tags
+injectCrunchAssets <- function () {
+    suppressMessages(
+        trace(
+            "bootstrapPage",
+            where=shiny::fillPage,
+            tracer=crunchAssets,
+            print=FALSE
+        )
     )
 }
 
-#' @importFrom shiny includeCSS includeScript tags
-loadCrunchAssets <- function () {
-    tags$head(
-        tags$link(rel="stylesheet", type="text/css",
-            href="https://app.crunch.io/styles.css"),
-        includeCSS(system.file("extra.css", package="crunchy")),
-        includeScript(system.file("extra.js", package="crunchy"))
-    )
-}
-
-#' @importFrom shiny div
-crunchAuthPlaceholder <- function () {
-    div(class = "form-group shiny-input-container",
-        style = "display: none;",
-        tags$input(id = "token", type = "text", class = "form-control", value = ""))
-}
+crunchAssets <- quote({
+    attachDependencies <- function (x, ...) {
+        # Prepend a bit of HTML before whatever the user supplied but after
+        # the global things--as if these were the first things in the user's
+        # list
+        x[[length(x)]] <- c(
+            list(
+                # Load Crunch assets
+                tags$head(
+                    tags$link(
+                        rel="stylesheet",
+                        type="text/css",
+                        href="https://app.crunch.io/styles.css"
+                    ),
+                    includeCSS(system.file("extra.css", package="crunchy")),
+                    includeScript(system.file("extra.js", package="crunchy"))
+                ),
+                # Add a placeholder for Crunch auth
+                div(
+                    class = "form-group shiny-input-container",
+                    style = "display: none;",
+                    tags$input(
+                        id = "token",
+                        type = "text",
+                        class = "form-control",
+                        value = ""
+                    )
+                )
+            ),
+            x[[length(x)]]
+        )
+        htmltools::attachDependencies(x, ...)
+    }
+})

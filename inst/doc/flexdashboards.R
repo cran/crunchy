@@ -1,4 +1,4 @@
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  library(crunchy)
 #  ui <- fluidPage(
 #      includeHTML("dashboard")
@@ -9,12 +9,12 @@
 #  # Run the application
 #  shinyApp(ui = ui, server = server)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  ui <- fluidPage(
 #      uiOutput("dashboard")
 #  )
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  server <- function(input, output, session) {
 #      user <- shinyUser()
 #      output$dashboard <- renderUI({
@@ -23,7 +23,7 @@
 #      })
 #  }
 
-## ----eval = FALSE--------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  server <- function(input, output, session) {
 #      user <- shinyUser()
 #      output$dashboard <- renderUI({
@@ -38,7 +38,7 @@
 #      })
 #  }
 
-## ----eval = FALSE--------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  library(crunchy)
 #  
 #  ui <- fluidPage(

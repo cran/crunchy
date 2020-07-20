@@ -7,12 +7,13 @@ Description: To facilitate building custom dashboards on the Crunch data
     and authorization automatically and custom stylesheets to help match the
     look and feel of the Crunch web application. The package also includes
     several gadgets for use in 'RStudio'.
-Version: 0.3.1
+Version: 0.3.2
 Authors@R: c(
+    person("Greg", "Freedman Ellis", role=c("aut", "cre"), email="greg@crunch.io"),
     person("Neal", "Richardson", role="aut", email="neal.p.richardson@gmail.com"),
     person("Jonathan", "Keane", role="aut", email="jkeane@gmail.com"),
     person("Gordon", "Shotwell", role="aut", email="gordon.shotwell@gmail.com"),
-    person("Mike", "Malecki", role=c("aut", "cre"), email="mike@crunch.io"))
+    person("Mike", "Malecki", role="aut", email="mike@crunch.io"))
 URL: https://crunch.io/r/crunchy/, https://github.com/Crunch-io/crunchy
 BugReports: https://github.com/Crunch-io/crunchy/issues
 License: LGPL (>= 3)
@@ -24,11 +25,12 @@ RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 Language: en-US
 NeedsCompilation: no
-Packaged: 2019-06-06 19:13:09 UTC; jkeane
-Author: Neal Richardson [aut],
+Packaged: 2020-07-20 19:34:16 UTC; gregfreedmanellis
+Author: Greg Freedman Ellis [aut, cre],
+  Neal Richardson [aut],
   Jonathan Keane [aut],
   Gordon Shotwell [aut],
-  Mike Malecki [aut, cre]
-Maintainer: Mike Malecki <mike@crunch.io>
+  Mike Malecki [aut]
+Maintainer: Greg Freedman Ellis <greg@crunch.io>
 Repository: CRAN
-Date/Publication: 2019-06-06 23:30:03 UTC
+Date/Publication: 2020-07-20 23:40:24 UTC

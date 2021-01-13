@@ -1,4 +1,4 @@
-15836ab9137c2ad538246238478787f2 *DESCRIPTION
+9792cc53ecd1cf3811e61579c6b19467 *DESCRIPTION
 49bb92332515d7ffd0cbb01da67c63a8 *NAMESPACE
 3e4e469aa8a0a627bbad5e7771faf163 *R/crunch-page.R
 e4ad269141b5a7913805b28f68e2c4b6 *R/crunchy-server.R
@@ -14,7 +14,7 @@ bd5b5a3d9a95f40dc51edd0c6fa55833 *R/render.R
 4d55a317352568d7ef6feb3a28af9080 *inst/WORDLIST
 4657a4276ae09c8ef27cc3aacbc2da63 *inst/doc/flexdashboards.R
 2449741cb1d083067369d78d0248bae8 *inst/doc/flexdashboards.Rmd
-97c663068ff361d4b5863f8fb47653de *inst/doc/flexdashboards.html
+40143c27d4e0f7b91252b5165efec706 *inst/doc/flexdashboards.html
 5867692ce691307cc093e9819e7798f6 *inst/example_apps/crunchy_server/app.R
 e9b2fa5deb563a7260a869b921aa3313 *inst/example_apps/dynamic_render_app/acme_dashboard.Rmd
 83eaa582fa3eecfa3f2135840f75ae86 *inst/example_apps/dynamic_render_app/acme_dashboard.html
@@ -54,7 +54,7 @@ d59cc0fe1bc2b7de1c09444ae3b18c08 *tests/testthat/gadgets/makeArrayGadget/tests/s
 7b9dfeccc932e821aab2bac19ca93cc1 *tests/testthat/gadgets/makeArrayGadget/tests/shinytest/no_interaction_test.R
 c8647cc24a6edf2e94cda3d094bde03c *tests/testthat/helper.R
 1cc26b13745bd4ed30fd1f63312ac194 *tests/testthat/test-crunchy-server.R
-535d4a2d8ca8c209f0c42dfc1da71c87 *tests/testthat/test-gadgets.R
+6456cb4ee8b899adf9da20082023795c *tests/testthat/test-gadgets.R
 7d86a7c99110e155c717cf563087f552 *tests/testthat/test-page.R
 d4fc63bf2a8621f0afeba78f2f6b5bd4 *tests/testthat/test-reactive-functions.R
 2449741cb1d083067369d78d0248bae8 *vignettes/flexdashboards.Rmd
